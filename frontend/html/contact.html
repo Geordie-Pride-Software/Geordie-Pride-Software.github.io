@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GPSoftware | Contact</title>
+
+    <link
+        rel="stylesheet"
+        href="../template/template.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <div id="template-header"></div>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <section class="contact">
+
+            <h1>
+                Contact GPSoftware
+            </h1>
+
+
+            <form
+                id="contact-form"
+            >
+
+
+                <!-- Layer 1: Name -->
+
+                <div class="contact-layer">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Layer 2: Email or Phone -->
+
+                <div class="contact-layer">
+
+                    <label for="contact">
+                        Email or Phone
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contact"
+                        name="contact"
+                        placeholder="Email address or phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Layer 3: Message -->
+
+                <div class="contact-layer">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Enter your message..."
+                        rows="8"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Send -->
+
+                <div class="contact-submit">
+
+                    <button
+                        type="submit"
+                    >
+                        Send Message
+                    </button>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <p
+                    id="form-status"
+                    role="status"
+                ></p>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <div id="template-footer"></div>
+
+
+    <!-- Template JavaScript -->
+
+    <script src="../template/template.js"></script>
+
+    <!-- Contact JavaScript -->
+
+    <script src="../js/contact.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+/* =========================================
+   GPSoftware - Main CSS
+   General Website & Page Styling
+   ========================================= */
+
+
+/* ---------- Global ---------- */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f1e8;
+    color: #222222;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ---------- Main Content ---------- */
+
+main {
+    width: 100%;
+
+    flex: 1;
+
+    padding: 3rem 2rem;
+}
+
+
+/* ---------- Headings ---------- */
+
+h1,
+h2,
+h3 {
+    color: #222222;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+
+/* =========================================
+   Home Page
+   ========================================= */
+
+.hero {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 5rem 2rem;
+
+    text-align: center;
+}
+
+
+.hero h1 {
+    margin-bottom: 1rem;
+
+    font-size: 3.5rem;
+}
+
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+
+/* =========================================
+   Contact Page
+   ========================================= */
+
+.contact {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 2rem;
+}
+
+
+/* ---------- Contact Heading ---------- */
+
+.contact h1 {
+    margin-bottom: 2.5rem;
+
+    text-align: center;
+
+    font-size: 2.5rem;
+}
+
+
+/* ---------- Contact Form ---------- */
+
+#contact-form {
+    width: 100%;
+
+    padding: 2rem;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d6c9aa;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------- Contact Layers ---------- */
+
+.contact-layer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1.5rem;
+}
+
+
+.contact-layer label {
+    margin-bottom: 0.5rem;
+
+    color: #222222;
+
+    font-weight: bold;
+}
+
+
+.contact-layer input,
+.contact-layer textarea {
+    width: 100%;
+
+    padding: 0.9rem;
+
+    background-color: #ffffff;
+
+    color: #222222;
+
+    border: 1px solid #c8b98e;
+
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    box-sizing: border-box;
+}
+
+
+.contact-layer input::placeholder,
+.contact-layer textarea::placeholder {
+    color: #777777;
+}
+
+
+.contact-layer input:focus,
+.contact-layer textarea:focus {
+    outline: none;
+
+    border-color: #b08d32;
+
+    box-shadow: 0 0 0 2px rgba(176, 141, 50, 0.15);
+}
+
+
+/* ---------- Message ---------- */
+
+.contact-layer textarea {
+    min-height: 200px;
+
+    resize: vertical;
+}
+
+
+/* ---------- Submit Button ---------- */
+
+.contact-submit {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 2rem;
+}
+
+
+.contact-submit button {
+    padding: 0.9rem 2rem;
+
+    background-color: #222222;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.contact-submit button:hover {
+    background-color: #b08d32;
+
+    color: #ffffff;
+}
+
+
+.contact-submit button:active {
+    transform: translateY(1px);
+}
+
+
+/* ---------- Form Status ---------- */
+
+#form-status {
+    margin-top: 1rem;
+
+    color: #555555;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 2rem 1rem;
+    }
+
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .contact {
+        padding: 1rem 0;
+    }
+
+
+    .contact h1 {
+        font-size: 2rem;
+    }
+
+
+    #contact-form {
+        padding: 1.5rem;
+    }
+
+
+    .contact-submit {
+        justify-content: stretch;
+    }
+
+
+    .contact-submit button {
+        width: 100%;
+    }
+
+}

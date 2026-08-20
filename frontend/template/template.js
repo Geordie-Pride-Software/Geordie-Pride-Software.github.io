@@ -3,44 +3,17 @@
 // =========================================
 
 
-// ---------- Find Template ----------
-
-function getTemplatePath() {
-
-    const path = window.location.pathname;
-
-    if (path.includes("/frontend/html/products/games/games/")) {
-        return "../../../../template/template.html";
-    }
-
-    if (path.includes("/frontend/html/products/games/")) {
-        return "../../../template/template.html";
-    }
-
-    if (path.includes("/frontend/html/products/software/")) {
-        return "../../../template/template.html";
-    }
-
-    if (path.includes("/frontend/html/products/")) {
-        return "../../template/template.html";
-    }
-
-    if (path.includes("/frontend/html/")) {
-        return "../../template/template.html";
-    }
-
-    return "frontend/template/template.html";
-}
-
-
 // ---------- Load Template ----------
 
-fetch(getTemplatePath())
+fetch("../template/template.html")
 
     .then(response => {
 
         if (!response.ok) {
-            throw new Error("Could not load template.html");
+            throw new Error(
+                "Could not load template.html: " +
+                response.status
+            );
         }
 
         return response.text();
@@ -49,28 +22,70 @@ fetch(getTemplatePath())
 
     .then(template => {
 
-        document
-            .getElementById("template")
-            .innerHTML = template;
+        // Create a temporary container
+        const container = document.createElement("div");
+
+        container.innerHTML = template;
 
 
+        // Find header and footer
+        const header =
+            container.querySelector(".site-header");
+
+        const footer =
+            container.querySelector(".site-footer");
+
+
+        // Find the placeholders
+        const headerContainer =
+            document.getElementById("template-header");
+
+        const footerContainer =
+            document.getElementById("template-footer");
+
+
+        // Insert header
+        if (header && headerContainer) {
+
+            headerContainer.appendChild(header);
+
+        }
+
+
+        // Insert footer
+        if (footer && footerContainer) {
+
+            footerContainer.appendChild(footer);
+
+        }
+
+
+        // Start menu
         initialiseMenu();
 
     })
 
     .catch(error => {
 
-        console.error("Template loading error:", error);
+        console.error(
+            "GPSoftware template error:",
+            error
+        );
 
     });
 
 
-// ---------- Mobile Menu ----------
+// =========================================
+// Mobile Menu
+// =========================================
 
 function initialiseMenu() {
 
-    const menuButton = document.getElementById("menu-button");
-    const navigation = document.getElementById("site-nav");
+    const menuButton =
+        document.getElementById("menu-button");
+
+    const navigation =
+        document.getElementById("site-nav");
 
 
     if (!menuButton || !navigation) {
@@ -78,28 +93,31 @@ function initialiseMenu() {
     }
 
 
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener(
+        "click",
+        function () {
 
-        navigation.classList.toggle("active");
-
-
-        const menuOpen =
-            navigation.classList.contains("active");
+            navigation.classList.toggle("active");
 
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            menuOpen
-        );
+            const menuOpen =
+                navigation.classList.contains("active");
 
 
-        menuButton.setAttribute(
-            "aria-label",
-            menuOpen
-                ? "Close menu"
-                : "Open menu"
-        );
+            menuButton.setAttribute(
+                "aria-expanded",
+                menuOpen
+            );
 
-    });
+
+            menuButton.setAttribute(
+                "aria-label",
+                menuOpen
+                    ? "Close menu"
+                    : "Open menu"
+            );
+
+        }
+    );
 
 }

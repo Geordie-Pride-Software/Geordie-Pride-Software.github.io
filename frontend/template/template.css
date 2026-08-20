@@ -1,21 +1,44 @@
 /* =========================================
-   GPSoftware - Template
-   Shared website styling
+   GPSoftware - Template CSS
    ========================================= */
+
+
+/* ---------- Global ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* ---------- Colour Scheme ---------- */
 
 :root {
-    --gp-primary: #000000;
-    --gp-secondary: #ffffff;
+    --gp-primary: #1F3D2B;
+    --gp-secondary: #FFFFF0;
 
-    --gp-accent-1: #000000;
-    --gp-accent-2: #000000;
-    --gp-accent-3: #000000;
+    --gp-accent-1: #1C6A58;
+    --gp-accent-2: #E6E2D8;
 
-    --gp-text: #000000;
-    --gp-background: #ffffff;
+    --gp-text: #1F3D2B;
+    --gp-background: #E6E2D8;
 }
 
 
@@ -28,6 +51,8 @@
     align-items: center;
     justify-content: space-between;
 
+    position: relative;
+
     padding: 1rem 2rem;
 
     background-color: var(--gp-primary);
@@ -36,6 +61,11 @@
 
 
 /* ---------- Logo ---------- */
+
+.site-logo {
+    flex-shrink: 0;
+}
+
 
 .site-logo a {
     color: var(--gp-secondary);
@@ -56,6 +86,7 @@
     gap: 2rem;
 }
 
+
 .site-nav a {
     color: var(--gp-secondary);
 
@@ -63,6 +94,7 @@
 
     font-size: 1rem;
 }
+
 
 .site-nav a:hover {
     color: var(--gp-accent-1);
@@ -75,6 +107,7 @@
     display: none;
 
     background: none;
+
     border: none;
 
     color: var(--gp-secondary);
@@ -82,6 +115,8 @@
     font-size: 1.8rem;
 
     cursor: pointer;
+
+    padding: 0;
 }
 
 
@@ -96,6 +131,11 @@
     color: var(--gp-secondary);
 
     text-align: center;
+}
+
+
+.site-footer p {
+    margin: 0;
 }
 
 
@@ -128,6 +168,8 @@
         gap: 0;
 
         background-color: var(--gp-primary);
+
+        z-index: 1000;
     }
 
 
