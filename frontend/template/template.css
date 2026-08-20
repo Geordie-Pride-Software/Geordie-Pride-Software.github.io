@@ -1,0 +1,147 @@
+/* =========================================
+   GPSoftware - Template
+   Shared website styling
+   ========================================= */
+
+
+/* ---------- Colour Scheme ---------- */
+
+:root {
+    --gp-primary: #000000;
+    --gp-secondary: #ffffff;
+
+    --gp-accent-1: #000000;
+    --gp-accent-2: #000000;
+    --gp-accent-3: #000000;
+
+    --gp-text: #000000;
+    --gp-background: #ffffff;
+}
+
+
+/* ---------- Header ---------- */
+
+.site-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 2rem;
+
+    background-color: var(--gp-primary);
+    color: var(--gp-secondary);
+}
+
+
+/* ---------- Logo ---------- */
+
+.site-logo a {
+    color: var(--gp-secondary);
+
+    text-decoration: none;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.site-nav a {
+    color: var(--gp-secondary);
+
+    text-decoration: none;
+
+    font-size: 1rem;
+}
+
+.site-nav a:hover {
+    color: var(--gp-accent-1);
+}
+
+
+/* ---------- Mobile Menu Button ---------- */
+
+.menu-button {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: var(--gp-secondary);
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+}
+
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    width: 100%;
+
+    padding: 1rem 2rem;
+
+    background-color: var(--gp-primary);
+    color: var(--gp-secondary);
+
+    text-align: center;
+}
+
+
+/* ---------- Mobile Layout ---------- */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 1rem;
+    }
+
+
+    .menu-button {
+        display: block;
+    }
+
+
+    .site-nav {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background-color: var(--gp-primary);
+    }
+
+
+    .site-nav.active {
+        display: flex;
+    }
+
+
+    .site-nav a {
+        width: 100%;
+
+        padding: 1rem;
+
+        text-align: center;
+    }
+
+}
