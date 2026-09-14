@@ -5,7 +5,10 @@
 
 // ---------- Load Template ----------
 
-fetch("../template/template.html")
+const templateScript = document.currentScript;
+const templateUrl = new URL("template.html", templateScript.src);
+
+fetch(templateUrl)
 
     .then(response => {
 

@@ -230,6 +230,215 @@ h2 {
     transform: translateY(1px);
 }
 
+/* ---------- Tiles ---------- */
+/* =========================
+   TILE GRID
+   ========================= */
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   INDIVIDUAL TILE
+   ========================= */
+
+.tile {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 180px;
+    padding: 1.5rem;
+
+    background-color: #222;
+    border-radius: 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================
+   TILE IMAGE
+   ========================= */
+
+.tile:hover {
+    background-color: #1c6a58;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   TILE CONTENT
+   ========================= */
+
+.tile-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.tile h2 {
+    margin: 0 0 0.75rem;
+
+    color: #ffffff;
+}
+
+
+.tile p {
+    margin: 0;
+
+    color: #e6e2d8;
+}
+
+
+/* =========================================
+   Product Page
+   ========================================= */
+
+.product-page {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.updates-table-wrapper {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+
+.updates-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: #ffffff;
+}
+
+
+.updates-table th,
+.updates-table td {
+    padding: 1rem;
+
+    border: 1px solid #d6c9aa;
+
+    text-align: left;
+}
+
+
+.updates-table thead {
+    background-color: #1f3d2b;
+    color: #fffff0;
+}
+
+
+.download-link {
+    display: inline-block;
+
+    padding: 0.6rem 1rem;
+
+    border: 0;
+    border-radius: 4px;
+
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.information-link {
+    color: #1c6a58;
+    text-decoration: underline;
+}
+
+
+.download-link {
+    background-color: #1c6a58;
+    color: #ffffff;
+}
+
+
+.information-link:hover,
+.download-link:hover {
+    opacity: 0.8;
+}
+
+
+.information-dialog {
+    width: min(800px, calc(100% - 2rem));
+    max-height: 80vh;
+    padding: 0;
+
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.information-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+
+.dialog-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+
+    background-color: #1f3d2b;
+    color: #fffff0;
+}
+
+
+.dialog-heading h2 {
+    margin: 0;
+    color: #fffff0;
+}
+
+
+.dialog-close {
+    padding: 0.5rem 0.75rem;
+
+    background: transparent;
+    border: 1px solid #fffff0;
+    border-radius: 4px;
+
+    color: #fffff0;
+    cursor: pointer;
+}
+
+
+.update-content {
+    display: block;
+
+    width: 100%;
+    height: 55vh;
+    min-height: 180px;
+    max-height: calc(80vh - 80px);
+    overflow: auto;
+    margin: 0;
+
+    border: 0;
+}
+
 
 /* ---------- Form Status ---------- */
 
@@ -250,6 +459,11 @@ h2 {
 
     main {
         padding: 2rem 1rem;
+    }
+
+
+    .tiles {
+        grid-template-columns: 1fr;
     }
 
 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0"
+	>
+
+	<title>GPSoftware | RCUT</title>
+
+	<link
+		rel="stylesheet"
+		href="../../../template/template.css"
+	>
+
+	<link
+		rel="stylesheet"
+		href="../../../css/main.css"
+	>
+
+</head>
+
+
+<body>
+
+	<div id="template-header"></div>
+
+
+	<main>
+
+		<section class="product-page">
+
+			<h1>RCUT</h1>
+
+			<p>
+				Release history and downloads for RCUT.
+			</p>
+
+			<div class="updates-table-wrapper">
+
+				<table class="updates-table">
+
+					<thead>
+						<tr>
+							<th scope="col">Version</th>
+							<th scope="col">Information</th>
+							<th scope="col">Download</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<th scope="row">PR1.0.1</th>
+							<td>
+								<a
+									class="information-link"
+									href="#information-dialog"
+									aria-haspopup="dialog"
+									data-version="PR1.0.1"
+									data-update-page="RCUT_Updates/PR1-0-1/PR1-0-1.html"
+								>
+									Information
+								</a>
+							</td>
+							<td>Not available</td>
+						</tr>
+
+						<tr>
+							<th scope="row">PR1.0</th>
+							<td>
+								<a
+									class="information-link"
+									href="#information-dialog"
+									aria-haspopup="dialog"
+									data-version="PR1.0"
+									data-update-page="RCUT_Updates/PR1-0-0/PR1-0.html"
+								>
+									Information
+								</a>
+							</td>
+							<td>
+								<a
+									class="download-link"
+									href="RCUT_Updates/PR1-0-0/RCUT2.5-1.0.0.tar"
+									download
+								>
+									Download
+								</a>
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<dialog
+		class="information-dialog"
+		id="information-dialog"
+		aria-labelledby="dialog-title"
+	>
+		<div class="dialog-heading">
+			<h2 id="dialog-title">Update information</h2>
+
+			<button
+				class="dialog-close"
+				type="button"
+				aria-label="Close information"
+			>
+				Close
+			</button>
+		</div>
+
+		<iframe
+			class="update-content"
+			id="update-content"
+			src="RCUT_Updates/PR1-0-0/PR1-0.html"
+			title="RCUT PR1.0 update information"
+		></iframe>
+	</dialog>
+
+
+	<div id="template-footer"></div>
+
+
+	<script src="../../../template/template.js"></script>
+	<script src="../../../js/product.js"></script>
+
+</body>
+
+</html>

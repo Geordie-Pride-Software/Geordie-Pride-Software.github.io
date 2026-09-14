@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RCUT PR1.0 Update</title>
+
+    <style>
+
+        :root {
+            color-scheme: light;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #1f2328;
+            background-color: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .markdown-body {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        h1,
+        h3 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        h1 {
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #d0d7de;
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1.25em;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        code {
+            padding: 0.2em 0.4em;
+            background-color: rgba(175, 184, 193, 0.2);
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 85%;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <article class="markdown-body">
+
+        <h1>RCUT 2.5 PR1.0.1 - Bug Fix Report</h1>
+
+        <h2>Summary</h2>
+
+        <p>
+            This patch resolves a critical issue affecting the shared library (DLL)
+            build of RCUT. The static library (<code>libRCUT.a</code>) was unaffected.
+        </p>
+
+        <h2>Fixed</h2>
+
+        <h3>DLL export of input functions</h3>
+
+        <h4>Issue</h4>
+
+        <p>
+            When RCUT was built as a DLL, several public API functions declared in
+            <code>RCUT.h</code> were not being exported by
+            <code>libRCUT.dll</code>. Applications linking against the generated
+            import library (<code>libRCUT.dll.a</code>) therefore failed during
+            linking with unresolved external symbol errors.
+        </p>
+
+        <p>A notable affected function was:</p>
+
+        <ul>
+            <li><code>RCUT_Input_GetMouseDeltaX()</code></li>
+        </ul>
+
+        <p>
+            The implementation existed within the library and compiled correctly,
+            but the symbol was absent from the DLL export table.
+        </p>
+
+        <h4>Cause</h4>
+
+        <p>
+            The affected implementation source file did not include the public
+            <code>RCUT.h</code> header containing the <code>RCUT_API</code>
+            export/import macro. As a result, the function definitions were compiled
+            without <code>__declspec(dllexport)</code> when building the shared
+            library, preventing them from being exported.
+        </p>
+
+        <h4>Resolution</h4>
+
+        <ul>
+            <li>Updated the implementation to use the public API declarations provided by <code>RCUT.h</code>.</li>
+            <li>Removed duplicate declarations that bypassed the <code>RCUT_API</code> export macro.</li>
+            <li>Rebuilt both the DLL and import library.</li>
+        </ul>
+
+        <h2>Verification</h2>
+
+        <p>The fix was verified by:</p>
+
+        <ul>
+            <li>Successfully exporting <code>RCUT_Input_GetMouseDeltaX</code> from <code>libRCUT.dll</code>.</li>
+            <li>Successfully generating a valid <code>libRCUT.dll.a</code> import library.</li>
+            <li>Successfully linking external applications against the DLL.</li>
+            <li>Confirming that both static and shared library configurations build successfully using CMake.</li>
+        </ul>
+
+        <h2>Impact</h2>
+
+        <ul>
+            <li><strong>Shared Library (<code>libRCUT.dll</code>)</strong>: Fixed.</li>
+            <li><strong>Import Library (<code>libRCUT.dll.a</code>)</strong>: Fixed.</li>
+        </ul>
+
+        <p>No API changes were introduced. Existing source code remains compatible.</p>
+
+    </article>
+
+</body>
+
+</html>
