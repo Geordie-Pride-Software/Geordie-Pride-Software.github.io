@@ -14,12 +14,12 @@
 
     <link
         rel="stylesheet"
-        href="../template/template.css"
+        href="../../template/template.css"
     >
 
     <link
         rel="stylesheet"
-        href="../css/main.css"
+        href="../../css/main.css"
     >
 
 </head>
@@ -82,6 +82,7 @@
                         id="contact"
                         name="contact"
                         placeholder="Email address or phone number"
+                        autocomplete="email"
                         required
                     >
 
@@ -112,9 +113,11 @@
                 <div class="contact-submit">
 
                     <button
+                        id="contact-submit-button"
                         type="submit"
                     >
-                        Send Message
+                        <span>Send Message</span>
+                        <span aria-hidden="true">&rarr;</span>
                     </button>
 
                 </div>
@@ -125,6 +128,7 @@
                 <p
                     id="form-status"
                     role="status"
+                    aria-live="polite"
                 ></p>
 
 
@@ -142,11 +146,15 @@
 
     <!-- Template JavaScript -->
 
-    <script src="../template/template.js"></script>
+    <script src="../../template/template.js"></script>
+
+    <!-- EmailJS Browser SDK -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!-- Contact JavaScript -->
 
-    <script src="../js/contact.js"></script>
+    <script src="../../js/contact.js"></script>
 
 
 </body>

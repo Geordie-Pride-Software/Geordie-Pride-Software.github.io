@@ -65,6 +65,7 @@ fetch(templateUrl)
 
         // Start menu
         initialiseMenu();
+        initialiseDropdowns();
 
     })
 
@@ -77,6 +78,85 @@ fetch(templateUrl)
 
     });
 
+// =========================================
+// Dropdown Menus
+// =========================================
+
+function initialiseDropdowns() {
+
+    const dropdowns =
+        document.querySelectorAll(".dropdown");
+
+    if (!dropdowns.length) {
+        return;
+    }
+
+    function closeDropdown(dropdown) {
+
+        const button =
+            dropdown.querySelector(".dropdown-button");
+
+        const content =
+            dropdown.querySelector(".dropdown-content");
+
+        if (!button || !content) {
+            return;
+        }
+
+        content.classList.remove("show");
+        button.setAttribute("aria-expanded", "false");
+
+    }
+
+    function closeAllDropdowns(except = null) {
+
+        dropdowns.forEach(dropdown => {
+
+            if (dropdown !== except) {
+                closeDropdown(dropdown);
+            }
+
+        });
+
+    }
+
+    dropdowns.forEach(dropdown => {
+
+        const button =
+            dropdown.querySelector(".dropdown-button");
+
+        const content =
+            dropdown.querySelector(".dropdown-content");
+
+        if (!button || !content) {
+            return;
+        }
+
+        button.addEventListener("click", function () {
+
+            const isOpen =
+                content.classList.contains("show");
+
+            closeAllDropdowns();
+
+            if (!isOpen) {
+                content.classList.add("show");
+                button.setAttribute("aria-expanded", "true");
+            }
+
+        });
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+        if (!event.target.closest(".dropdown")) {
+            closeAllDropdowns();
+        }
+
+    });
+
+}
 
 // =========================================
 // Mobile Menu

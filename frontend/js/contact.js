@@ -11,10 +11,27 @@ const contactForm =
 const formStatus =
     document.getElementById("form-status");
 
+const emailJsConfig = {
+    publicKey: "uZ0pviwdceKx3zayY",
+    serviceId: "service_7r3jj06",
+    templateId: "template_izlvx8j"
+};
+
+const emailJsConfigured =
+    !Object.values(emailJsConfig).some(value => value.startsWith("YOUR_"));
+
+if (emailJsConfigured) {
+
+    emailjs.init({
+        publicKey: emailJsConfig.publicKey
+    });
+
+}
+
 
 // ---------- Form Submission ----------
 
-contactForm.addEventListener("submit", function (event) {
+contactForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
@@ -24,11 +41,8 @@ contactForm.addEventListener("submit", function (event) {
     const name =
         document.getElementById("name").value.trim();
 
-    const email =
-        document.getElementById("email").value.trim();
-
-    const phone =
-        document.getElementById("phone").value.trim();
+    const contact =
+        document.getElementById("contact").value.trim();
 
     const message =
         document.getElementById("message").value.trim();
@@ -46,7 +60,7 @@ contactForm.addEventListener("submit", function (event) {
     }
 
 
-    if (email === "" && phone === "") {
+    if (contact === "") {
 
         formStatus.textContent =
             "Please provide an email address or phone number.";
@@ -66,64 +80,59 @@ contactForm.addEventListener("submit", function (event) {
     }
 
 
-    // ---------- Send To Backend ----------
+    if (!emailJsConfigured) {
+
+        formStatus.textContent =
+            "Email service setup is incomplete. Please try again later.";
+
+        return;
+
+    }
+
+
+    // ---------- Send With EmailJS ----------
 
     formStatus.textContent =
         "Sending message...";
 
+    const submitButton =
+        document.getElementById("contact-submit-button");
 
-    fetch("/api/contact", {
+    submitButton.disabled = true;
 
-        method: "POST",
+    const subject =
+        `Website contact from ${name}`;
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+    try {
 
-        body: JSON.stringify({
-
-            name: name,
-            email: email,
-            phone: phone,
-            message: message
-
-        })
-
-    })
-
-    .then(response => {
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Failed to send message."
-            );
-
-        }
-
-        return response.json();
-
-    })
-
-    .then(data => {
+        await emailjs.send(
+            emailJsConfig.serviceId,
+            emailJsConfig.templateId,
+            {
+                from_name: name,
+                reply_to: contact,
+                contact: contact,
+                subject: subject,
+                message: message
+            }
+        );
 
         formStatus.textContent =
             "Your message has been sent successfully.";
 
         contactForm.reset();
 
-    })
+    } catch (error) {
 
-    .catch(error => {
-
-        console.error(
-            "Contact form error:",
-            error
-        );
+        console.error("EmailJS contact form error:", error);
 
         formStatus.textContent =
-            "Sorry, there was a problem sending your message.";
+            "Sorry, your message could not be sent. Please try again.";
 
-    });
+    } finally {
+
+        submitButton.disabled = false;
+
+    }
 
 });
