@@ -185,11 +185,45 @@ body {
 
     color: var(--gp-secondary);
 
-    font-size: 1.8rem;
-
     cursor: pointer;
 
     padding: 0;
+
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.menu-button span {
+    display: block;
+
+    width: 25px;
+    height: 3px;
+
+    background-color: var(--gp-secondary);
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.menu-button.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+
+.menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+
+.menu-button.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+.menu-button:focus-visible {
+    outline: 2px solid var(--gp-secondary);
+    outline-offset: 4px;
 }
 
 
@@ -222,7 +256,7 @@ body {
 
 
     .menu-button {
-        display: block;
+        display: flex;
     }
 
 
@@ -289,4 +323,12 @@ body {
         white-space: normal;
     }
 
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .menu-button span {
+        transition: none;
+    }
 }

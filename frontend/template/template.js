@@ -181,6 +181,7 @@ function initialiseMenu() {
         function () {
 
             navigation.classList.toggle("active");
+            menuButton.classList.toggle("active");
 
 
             const menuOpen =
