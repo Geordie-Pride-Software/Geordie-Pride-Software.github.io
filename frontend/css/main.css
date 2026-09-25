@@ -101,19 +101,6 @@ h2 {
 }
 
 
-.contact::after {
-    content: "Your message will open in your email app, ready to send.";
-
-    display: block;
-
-    margin: 0 auto 2rem;
-
-    color: #555555;
-
-    text-align: center;
-}
-
-
 /* ---------- Contact Form ---------- */
 
 #contact-form {

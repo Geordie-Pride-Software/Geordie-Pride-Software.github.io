@@ -22,6 +22,11 @@
         href="../../css/main.css"
     >
 
+    <link
+        rel="stylesheet"
+        href="../../css/rcut.css"
+    >
+
 </head>
 
 
@@ -35,19 +40,73 @@
 
     <!-- Main Content -->
 
-    <main>
-        <img src="../../src/logos/RCUT.png">
-        <p>
-            RCUT, the Rendering Core Utility Toolkit, is a collection of libraries<br>
-            developed by GPSoftware to render graphics across a wide range of dimensions.<br>
-            As of September 2026, the project is planned to support 2D, 2.5D,<br>
-            and 3D graphics. The 2.5D implementation currently uses a DDA engine in<br>
-            v1.0.0, although we plan to upgrade it to a BSP engine.<br><br>
+    <main class="rcut-page">
+        <section class="rcut-hero" aria-labelledby="rcut-title">
+            <div class="rcut-hero-content">
+                <p class="rcut-eyebrow">GPSoftware graphics technology</p>
+                <h1 id="rcut-title">Rendering Core Utility Toolkit</h1>
+                <p class="rcut-intro">
+                    A growing collection of libraries for building graphics across
+                    2D, 2.5D, and 3D environments.
+                </p>
+            </div>
 
-            To learn more about each engine, please explore the following links:<br>
-            <a href="../products/software/RCUT2-5.html">RCUT2.5</a>
-            <a href="../products/software/RCUT3.html">RCUT3</a>
-        </p>
+            <div class="rcut-logo-wrap">
+                <img
+                    src="../../src/logos/RCUT.png"
+                    alt="RCUT logo"
+                >
+            </div>
+        </section>
+
+        <section class="rcut-details" aria-labelledby="about-rcut-title">
+            <div class="rcut-copy">
+                <p class="rcut-eyebrow">About the toolkit</p>
+                <h2 id="about-rcut-title">A foundation for every dimension</h2>
+                <p>
+                    RCUT is GPSoftware’s rendering foundation: a family of focused
+                    libraries designed to make graphics development more consistent
+                    across different dimensions and project types.
+                </p>
+                <p>
+                    Its roadmap covers 2D, 2.5D, and 3D graphics. The current 2.5D
+                    renderer uses a DDA engine in version 1.0.0, with a future BSP
+                    implementation planned to support richer scene construction.
+                </p>
+            </div>
+
+            <aside class="rcut-status" aria-label="RCUT project status">
+                <p class="rcut-status-label">Current scope</p>
+                <strong>2D / 2.5D / 3D</strong>
+                <span>2.5D engine available in v1.0.0</span>
+            </aside>
+        </section>
+
+        <section class="rcut-engines" aria-labelledby="engines-title">
+            <div class="rcut-section-heading">
+                <p class="rcut-eyebrow">Explore the engines</p>
+                <h2 id="engines-title">Choose a direction</h2>
+            </div>
+
+            <div class="rcut-links">
+                <a class="rcut-link" href="../products/software/RCUT2-5.html">
+                    <span class="rcut-link-number">01</span>
+                    <span>
+                        <strong>RCUT2.5</strong>
+                        <small>Explore the current 2.5D renderer</small>
+                    </span>
+                    <span class="rcut-link-arrow" aria-hidden="true">&#8594;</span>
+                </a>
+                <a class="rcut-link" href="../products/software/RCUT3.html">
+                    <span class="rcut-link-number">02</span>
+                    <span>
+                        <strong>RCUT3</strong>
+                        <small>See the next dimension of the toolkit</small>
+                    </span>
+                    <span class="rcut-link-arrow" aria-hidden="true">&#8594;</span>
+                </a>
+            </div>
+        </section>
     </main>
 
 
