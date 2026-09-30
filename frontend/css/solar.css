@@ -1,0 +1,174 @@
+/* =========================================
+   GPSoftware - Solar Project Page
+   ========================================= */
+
+:root {
+    --solar-ink: #19352b;
+    --solar-muted: #5d6a62;
+    --solar-line: #d9ded6;
+    --solar-banner: #DFF7DF;
+    --solar-accent: #9b5738;
+}
+
+.solar-page {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 3rem) 6rem;
+    color: var(--solar-ink);
+}
+
+.solar-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+    align-items: center;
+    gap: clamp(2rem, 8vw, 7rem);
+    padding: clamp(2rem, 6vw, 5rem);
+    background: var(--solar-banner);
+}
+
+.solar-eyebrow {
+    margin: 0 0 1rem;
+    color: var(--solar-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.solar-hero h1,
+.solar-details h2 {
+    margin: 0;
+    color: var(--solar-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.05;
+}
+
+.solar-hero h1 {
+    max-width: 650px;
+    font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.solar-lead {
+    max-width: 560px;
+    margin: 1.75rem 0 0;
+    color: rgba(25, 53, 43, 0.78);
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.65;
+}
+
+.solar-logo-wrap {
+    display: grid;
+    min-height: 260px;
+    place-items: center;
+}
+
+.solar-logo-wrap img {
+    width: min(100%, 380px);
+    height: auto;
+}
+
+.solar-details {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1fr);
+    gap: clamp(2rem, 8vw, 8rem);
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    border-bottom: 1px solid var(--solar-line);
+}
+
+.solar-details h2 {
+    max-width: 500px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.solar-copy p {
+    max-width: 650px;
+    margin: 0 0 1.5rem;
+    color: var(--solar-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.solar-stack {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(2rem, 8vw, 8rem);
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.solar-stack h2 {
+    margin: 0;
+    color: var(--solar-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.solar-stack-list {
+    border-top: 1px solid var(--solar-line);
+}
+
+.solar-stack-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--solar-line);
+}
+
+.solar-stack-item span {
+    color: var(--solar-muted);
+    font-size: 0.9rem;
+}
+
+.solar-stack-item strong {
+    color: var(--solar-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: right;
+}
+
+.solar-artwork {
+    display: grid;
+    margin: 0;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    place-items: center;
+    background: #E0DDD4;
+    border: 1px solid var(--solar-line);
+}
+
+.solar-artwork img {
+    width: min(100%, 500px);
+    height: auto;
+}
+
+.solar-artwork figcaption {
+    margin-top: 1rem;
+    color: var(--solar-muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+    .solar-page {
+        padding-bottom: 3rem;
+    }
+
+    .solar-hero,
+    .solar-details,
+    .solar-stack {
+        grid-template-columns: 1fr;
+    }
+
+    .solar-hero {
+        gap: 2rem;
+    }
+
+    .solar-logo-wrap {
+        min-height: 180px;
+    }
+}

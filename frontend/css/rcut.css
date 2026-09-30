@@ -1,0 +1,241 @@
+/* =========================================
+   GPSoftware - RCUT Page
+   ========================================= */
+
+:root {
+    --rcut-ink: #19352b;
+    --rcut-muted: #5d6a62;
+    --rcut-paper: #fbfaf6;
+    --rcut-line: #d9ded6;
+    --rcut-banner: #dfbd9b;
+    --rcut-accent: #9b5738;
+    --rcut-accent-soft: #f2dfd2;
+}
+
+.rcut-page {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 3rem) 6rem;
+    color: var(--rcut-ink);
+}
+
+.rcut-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 6vw, 5rem);
+    background: var(--rcut-banner);
+    color: var(--rcut-ink);
+    overflow: hidden;
+    position: relative;
+}
+
+.rcut-hero::after {
+    content: "";
+    width: 18rem;
+    height: 18rem;
+    position: absolute;
+    right: -6rem;
+    bottom: -9rem;
+    border: 1px solid rgba(25, 53, 43, 0.18);
+    border-radius: 50%;
+}
+
+.rcut-hero-content,
+.rcut-logo-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.rcut-eyebrow {
+    margin: 0 0 1rem;
+    color: var(--rcut-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.rcut-hero h1,
+.rcut-copy h2,
+.rcut-section-heading h2 {
+    margin: 0;
+    color: inherit;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.rcut-hero h1 {
+    max-width: 680px;
+    font-size: clamp(2.5rem, 6vw, 5.4rem);
+    line-height: 0.98;
+}
+
+.rcut-intro {
+    max-width: 530px;
+    margin: 1.75rem 0 0;
+    color: rgba(25, 53, 43, 0.78);
+    font-size: clamp(1rem, 1.7vw, 1.25rem);
+    line-height: 1.65;
+}
+
+.rcut-logo-wrap {
+    display: grid;
+    place-items: center;
+}
+
+.rcut-logo-wrap img {
+    width: min(115%, 560px);
+    height: auto;
+}
+
+.rcut-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+    gap: clamp(2rem, 8vw, 8rem);
+    align-items: start;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    border-bottom: 1px solid var(--rcut-line);
+}
+
+.rcut-copy h2,
+.rcut-section-heading h2 {
+    color: var(--rcut-ink);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+}
+
+.rcut-copy p:not(.rcut-eyebrow) {
+    max-width: 650px;
+    margin: 1.5rem 0 0;
+    color: var(--rcut-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.rcut-status {
+    padding: 1.75rem;
+    background: var(--rcut-paper);
+    border-top: 4px solid var(--rcut-accent);
+    box-shadow: 0 12px 30px rgba(25, 53, 43, 0.08);
+}
+
+.rcut-status-label {
+    margin: 0 0 1.25rem;
+    color: var(--rcut-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.rcut-status strong {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 400;
+}
+
+.rcut-status span {
+    display: block;
+    margin-top: 0.75rem;
+    color: var(--rcut-muted);
+    line-height: 1.5;
+}
+
+.rcut-engines {
+    padding-top: clamp(3rem, 7vw, 6rem);
+}
+
+.rcut-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.rcut-link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.5rem;
+    color: var(--rcut-ink);
+    background: transparent;
+    border: 1px solid var(--rcut-line);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.rcut-link:hover,
+.rcut-link:focus-visible {
+    background: var(--rcut-accent-soft);
+    border-color: var(--rcut-accent);
+    transform: translateY(-3px);
+}
+
+.rcut-link:focus-visible {
+    outline: 3px solid rgba(196, 107, 60, 0.35);
+    outline-offset: 3px;
+}
+
+.rcut-link-number {
+    color: var(--rcut-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.rcut-link strong,
+.rcut-link small {
+    display: block;
+}
+
+.rcut-link strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+
+.rcut-link small {
+    margin-top: 0.35rem;
+    color: var(--rcut-muted);
+    font-size: 0.9rem;
+}
+
+.rcut-link-arrow {
+    color: var(--rcut-accent);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 700px) {
+    .rcut-page {
+        padding-bottom: 3rem;
+    }
+
+    .rcut-hero,
+    .rcut-details,
+    .rcut-links {
+        grid-template-columns: 1fr;
+    }
+
+    .rcut-hero {
+        gap: 2.5rem;
+    }
+
+    .rcut-logo-wrap {
+        min-height: 170px;
+    }
+
+    .rcut-logo-wrap img {
+        width: min(100%, 500px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rcut-link {
+        transition: none;
+    }
+}
