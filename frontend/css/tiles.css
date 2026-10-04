@@ -118,6 +118,13 @@
     --tile-subtext: #111111;
 }
 
+#OpenFBT {
+    --tile-bg: #EEF3F6;
+    --tile-hover: #1c6a58;
+    --tile-text: #000000;
+    --tile-subtext: #111111;
+}
+
 /* ---------- Reduced Motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {

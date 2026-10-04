@@ -263,6 +263,11 @@ h2 {
 }
 
 
+.updates-table td.updates-empty {
+    color: #555555;
+    text-align: center;
+}
+
 .updates-table-wrapper {
     overflow-x: auto;
     margin-top: 2rem;

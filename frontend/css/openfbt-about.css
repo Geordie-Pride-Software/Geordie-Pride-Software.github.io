@@ -1,0 +1,280 @@
+/* =========================================
+   GPSoftware - OpenFBT About Page
+   ========================================= */
+
+.openfbt-about-page {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 3rem) 6rem;
+    color: #172d3d;
+}
+
+.openfbt-about-hero {
+    padding: clamp(2rem, 5vw, 3.25rem);
+    background: #EEF3F6;
+}
+
+.openfbt-about-eyebrow {
+    margin: 0 0 1rem;
+    color: #2456a6;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.openfbt-about-copy h2,
+.openfbt-about-roadmap h2 {
+    margin: 0;
+    color: #172d3d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.openfbt-about-intro {
+    max-width: 530px;
+    margin: 0.5rem 1.25rem 0;
+    color: rgba(23, 45, 61, 0.78);
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    line-height: 1.65;
+}
+
+.openfbt-about-logo {
+    width: 100%;
+    background: #EEF3F6;
+}
+
+.openfbt-about-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.openfbt-about-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+    gap: clamp(2rem, 8vw, 8rem);
+    align-items: start;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    border-bottom: 1px solid #d4dde3;
+}
+
+.openfbt-about-copy h2,
+.openfbt-about-roadmap h2 {
+    color: #172d3d;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+}
+
+.openfbt-about-copy p:not(.openfbt-about-eyebrow) {
+    max-width: 650px;
+    margin: 1.5rem 0 0;
+    color: #586b79;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.openfbt-about-status {
+    padding: 1.75rem;
+    background: #f5f8fa;
+    border-top: 4px solid #2456a6;
+    box-shadow: 0 12px 30px rgba(23, 45, 61, 0.08);
+}
+
+.openfbt-about-status-label {
+    margin: 0 0 1.25rem;
+    color: #586b79;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.openfbt-about-status strong {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 400;
+}
+
+.openfbt-about-status span {
+    display: block;
+    margin-top: 0.75rem;
+    color: #586b79;
+    line-height: 1.5;
+}
+
+.openfbt-about-roadmap {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.openfbt-about-roadmap > p {
+    margin: 0;
+    color: #586b79;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.openfbt-about-release-link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.5rem;
+    color: #172d3d;
+    background: transparent;
+    border: 1px solid #d4dde3;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.openfbt-about-release-link:hover,
+.openfbt-about-release-link:focus-visible {
+    background: #eaf1f7;
+    border-color: #2456a6;
+    transform: translateY(-3px);
+}
+
+.openfbt-about-release-link:focus-visible {
+    outline: 3px solid rgba(36, 86, 166, 0.35);
+    outline-offset: 3px;
+}
+
+.openfbt-about-link-number {
+    color: #2456a6;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.openfbt-about-release-link strong,
+.openfbt-about-release-link small {
+    display: block;
+}
+
+.openfbt-about-release-link strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+
+.openfbt-about-release-link small {
+    margin-top: 0.35rem;
+    color: #586b79;
+    font-size: 0.9rem;
+}
+
+.openfbt-about-link-arrow {
+    color: #2456a6;
+    font-size: 1.5rem;
+}
+
+.openfbt-contribute {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    margin-top: clamp(3rem, 7vw, 6rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: #dce9f2;
+}
+
+.openfbt-contribute h2 {
+    margin: 0;
+    color: #172d3d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.openfbt-contribute > div:first-child > p:last-child {
+    max-width: 600px;
+    margin: 1rem 0 0;
+    color: #586b79;
+    line-height: 1.7;
+}
+
+.openfbt-contribute-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.openfbt-contribute-link {
+    display: inline-block;
+    padding: 0.8rem 1rem;
+    background: #2456a6;
+    border: 1px solid #2456a6;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.openfbt-contribute-link:hover,
+.openfbt-contribute-link:focus-visible {
+    background: #193f80;
+    border-color: #193f80;
+}
+
+.openfbt-contribute-link:focus-visible {
+    outline: 3px solid rgba(36, 86, 166, 0.35);
+    outline-offset: 3px;
+}
+
+.openfbt-contribute-link-secondary {
+    background: transparent;
+    color: #2456a6;
+}
+
+.openfbt-contribute-link-secondary:hover,
+.openfbt-contribute-link-secondary:focus-visible {
+    background: #eaf1f7;
+    color: #193f80;
+}
+
+@media (max-width: 700px) {
+    .openfbt-about-page {
+        padding-bottom: 3rem;
+    }
+
+    .openfbt-about-details,
+    .openfbt-about-roadmap {
+        grid-template-columns: 1fr;
+    }
+
+    .openfbt-contribute {
+        grid-template-columns: 1fr;
+    }
+
+    .openfbt-about-hero {
+        padding: 1.5rem;
+    }
+    
+    .openfbt-about-intro {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .openfbt-about-release-link {
+        transition: none;
+    }
+}
